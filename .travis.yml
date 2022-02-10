@@ -1,10 +1,12 @@
 language: generic
+
 sudo: required
- services:
+
+services:
  - docker
 
- before_install:
+before_install:
   - docker build -t ytodorov/docker-react -f Dockerfile.dev .
 
- script:
+script:
   - docker run -e CI=true ytodorov/docker-react npm run test
